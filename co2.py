@@ -32,4 +32,5 @@ def gen_graph():
     plt.savefig('temp.png')
     plt.close('all')
 
+print("Content-Type: text/html")
 print("hello world")
