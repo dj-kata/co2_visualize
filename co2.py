@@ -33,4 +33,6 @@ def gen_graph():
     plt.close('all')
 
 print("Content-Type: text/html")
-print("hello world")
+print("")
+print("<!DOCTYPE html><body><h1>Hello World!</h1><body></html>")
+#print("hello world")
