@@ -1,6 +1,11 @@
 # co2_visualize
-CO2濃度及び室温表示アプリ。動作イメージは以下。  
+CO2濃度及び室温表示アプリ。
+動作イメージは以下。  
 ![image](https://user-images.githubusercontent.com/61326119/133564960-674c6861-c7bc-4da5-8c5d-5c7c987f1229.png)
+
+co2_collect.pyで温度/co2濃度のログを取得し、  
+ログから直近2日分のグラフを作成して表示する。  
+co2.pyをブラウザから直接アクセスして使うことを想定しており、アクセス時に毎回グラフを生成し直す。
 
 # usage
 1. co2_collect.pyを自動実行し、co2.logを作成
