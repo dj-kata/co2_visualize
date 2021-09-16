@@ -7,6 +7,9 @@ co2_collect.pyで温度/co2濃度のログを取得し、
 ログから直近2日分のグラフを作成して表示する。  
 co2.pyをブラウザから直接アクセスして使うことを想定しており、アクセス時に毎回グラフを生成し直す。
 
+CO2測定器はCustom CO2miniを使用し、以下のライブラリ経由でアクセスする。
+https://github.com/heinemml/CO2Meter
+
 # usage
 1. co2_collect.pyを自動実行し、co2.logを作成
 2. co2.pyをブラウザから実行。(apache2でpython cgiが使えるように設定する必要あり)
