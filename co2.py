@@ -32,7 +32,11 @@ def gen_graph():
     plt.savefig('temp.png')
     plt.close('all')
 
+gen_graph()
 print("Content-Type: text/html")
 print("")
-print("<!DOCTYPE html><body><h1>Hello World!</h1><body></html>")
+print("<!DOCTYPE html><body><h1>")
+print('<img src="temp.png"><br>')
+print('<img src="co2.png"><br>')
+print("</h1><body></html>")
 #print("hello world")
