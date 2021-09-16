@@ -1,11 +1,14 @@
 #!/usr/bin/python3
+import sys
 import pandas as pd
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import os
+os.environ[ 'HOME' ] = '/home/matplotlib/tmp'
 
 def gen_graph():
-    dat = pd.read_csv('co2.log')
+    dat = pd.read_csv('./co2.log')
     dat.columns = ['ts','co2','temp']
     dat['ts'] = pd.to_datetime(dat['ts'])
 
@@ -20,7 +23,7 @@ def gen_graph():
     plt.xticks(rotation=90,size=25)
     plt.yticks(size=25)
     plt.title('co2[ppm]', size=22)
-    plt.savefig('co2.png')
+    plt.savefig('tmp/co2.png')
     plt.cla()
 
     ax.grid(which='major',axis='x', linestyle='--', linewidth=1)
@@ -29,14 +32,19 @@ def gen_graph():
     plt.xticks(rotation=90,size=25)
     plt.yticks(size=25)
     plt.title('temperature[C]', size=22)
-    plt.savefig('temp.png')
+    plt.savefig('tmp/temp.png')
     plt.close('all')
 
-gen_graph()
 print("Content-Type: text/html")
 print("")
-print("<!DOCTYPE html><body><h1>")
-print('<img src="temp.png"><br>')
-print('<img src="co2.png"><br>')
+print("<!DOCTYPE html>")
+print("<head>")
+print("<title>living_info</title>")
+print("<style>img{max-width: 100%;height: auto;}</style>")
+print("</head>")
+print("<body><h1>")
+sys.stdout.flush()
+gen_graph()
+print('<img src="../temp.png"><br>')
+print('<img src="../co2.png"><br>')
 print("</h1><body></html>")
-#print("hello world")
