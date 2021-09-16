@@ -20,3 +20,10 @@ CO2濃度及び室温表示アプリ
                 co2.png
                 temp.png
 ```
+
+# 動作環境
+以下の確認で動作確認している。
+- python3.7.3
+- apache:2.4.38
+- python3-matplotlib: 3.0.2-2
+- pandas:1.3.3
